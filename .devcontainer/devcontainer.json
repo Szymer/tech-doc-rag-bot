@@ -1,0 +1,16 @@
+{
+  "name": "TDRB",
+  "image": "mcr.microsoft.com/devcontainers/python:3.14",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "${containerWorkspaceFolder}/.venv/bin/python"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ]
+    }
+  },
+  "postCreateCommand": "python -m pip install --upgrade pip uv && uv --version && uv sync && uv pip install --python .venv/bin/python 'uvicorn[standard]'"
+}
