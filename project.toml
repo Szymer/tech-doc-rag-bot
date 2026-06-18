@@ -1,0 +1,40 @@
+[project]
+name = "control-cabinet-rag"
+version = "0.1.0"
+description = "RAG assistant for control cabinet technical documentation"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "langchain",
+    "langchain-openai",
+    "langchain-community",
+    "langchain-classic",
+    "langgraph",
+    "langchain-chroma",
+    "chromadb",
+    "pypdf",
+    "python-dotenv",
+    "pydantic",
+    "fastapi",
+    "uvicorn",
+    "rank-bm25",
+    "langsmith",
+    "ragas",
+    "datasets",
+    "pandas",
+    "langchain-text-splitters",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "debugpy",
+    "pytest",
+    "ruff",
+]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["app*"]
