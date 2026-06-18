@@ -1,0 +1,45 @@
+Metadata-Version: 2.4
+Name: control-cabinet-rag
+Version: 0.1.0
+Summary: RAG assistant for control cabinet technical documentation
+Requires-Python: >=3.14
+Description-Content-Type: text/markdown
+Requires-Dist: langchain
+Requires-Dist: langchain-openai
+Requires-Dist: langchain-community
+Requires-Dist: langchain-classic
+Requires-Dist: langgraph
+Requires-Dist: langchain-chroma
+Requires-Dist: chromadb
+Requires-Dist: pypdf
+Requires-Dist: python-dotenv
+Requires-Dist: pydantic
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: rank-bm25
+Requires-Dist: langsmith
+Requires-Dist: ragas
+Requires-Dist: datasets
+Requires-Dist: pandas
+Requires-Dist: langchain-text-splitters
+Requires-Dist: cryptography>=49.0.0
+
+# control-cabinet-rag
+
+Minimalny szkielet projektu RAG dla dokumentacji technicznej szaf sterowniczych.
+
+## Start z uv
+
+```bash
+uv sync
+uv run uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+```
+
+## Endpointy
+
+- `GET /health`
+- `POST /api/ask`
+
+## Devcontainer + debug
+
+Repo zawiera konfigurację `.devcontainer/` oraz `.vscode/launch.json` pod debug FastAPI.

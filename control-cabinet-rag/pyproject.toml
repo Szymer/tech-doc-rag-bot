@@ -3,7 +3,7 @@ name = "control-cabinet-rag"
 version = "0.1.0"
 description = "RAG assistant for control cabinet technical documentation"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.14"
 dependencies = [
     "langchain",
     "langchain-openai",
@@ -23,6 +23,7 @@ dependencies = [
     "datasets",
     "pandas",
     "langchain-text-splitters",
+    "cryptography>=49.0.0",
 ]
 
 [tool.uv]
@@ -35,3 +36,6 @@ dev-dependencies = [
 [build-system]
 requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["app*"]

@@ -1,23 +1,25 @@
 {
-  "version": "0.2.0",
+  "name": "LangChain Fun Box",
+  "image": "mcr.microsoft.com/devcontainers/python:3.14",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "${containerWorkspaceFolder}/.venv/bin/python"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ]
+    }
+  },
+  "postCreateCommand": "python -m pip install --upgrade pip uv && uv --version && uv sync && uv pip install --python .venv/bin/python 'uvicorn[standard]'",
   "configurations": [
     {
-      "name": "FastAPI (uvicorn)",
-      "type": "debugpy",
-      "request": "launch",
-      "module": "uvicorn",
-      "args": [
-        "app.main:app",
-        "--host",
-        "0.0.0.0",
-        "--port",
-        "8000",
-        "--reload"
-      ],
-      "jinja": true,
-      "cwd": "${workspaceFolder}",
-      "console": "integratedTerminal",
-      "envFile": "${workspaceFolder}/.env"
+      "name": "Attach to Chrome",
+      "port": 9222,
+      "request": "attach",
+      "type": "chrome",
+      "webRoot": "${workspaceFolder}"
     }
   ]
 }
